@@ -24,7 +24,7 @@ void testIntArrayInheritance()
 	cout << "Inset MIN array value: "; cin >> inp_min_val; cout	<< endl;
 	cout << "Inset MAX array value: "; cin >> inp_max_val; cout << endl;
 	testArrWb.setBounds(inp_min_val, inp_max_val);
-	cout << "Filling every array elelment with a random number (within the limits)" << endl;
+	cout << "Filling every array element with a random number (within the limits)" << endl;
 	// (50% positive values, 50% negative values)
 	for (int i = 0; i < intArray::MAX_SIZE; i++)
 		if (rand() % 2)
