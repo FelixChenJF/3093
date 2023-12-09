@@ -106,7 +106,7 @@ public:
                   cout << getItem(pos) << endl;
          }
    } 
-   //The number of �non-empty� items in the array (inserted so far by the user); 
+   //The number of non-empty items in the array (inserted so far by the user); 
    int getTotValidItems() {return tot_items;}
    // If a non-empty item is found in position pos, its value is written to val, 
    // the item becomes empty and true is returned; false otherwise; 
@@ -121,7 +121,7 @@ public:
          }
          return result;
    }
-   // If position pos is a valid position for this array, reset the corresponding item (so that it becomes �empty�); 
+   // If position pos is a valid position for this array, reset the corresponding item (so that it becomes empty); 
    bool resetItem(int pos)
    { 
       bool result=false;   
