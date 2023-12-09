@@ -6,26 +6,25 @@
 
 using namespace std;
 
-
 class intArray{
 public:
-       static const int MAX_SIZE=20;
+         static const int MAX_SIZE=20;
 private:
-        // holds the content 
-        int arrayItemContent[MAX_SIZE];
-        // indicates if teh element is empty
-        bool arrayItemEmpty[MAX_SIZE];
-        // tot non-empty items
-        int tot_items;
+         // holds the content 
+         int arrayItemContent[MAX_SIZE];
+         // indicates if the element is empty
+         bool arrayItemEmpty[MAX_SIZE];
+         // tot non-empty items
+         int tot_items;
         
-        void resetArray()
-        {
-           for(int pos=0; pos<MAX_SIZE; pos++)
-              resetItem(pos);
-        }
+         void resetArray()
+         {
+            for(int pos=0; pos<MAX_SIZE; pos++)
+               resetItem(pos);
+         }
                 
-        void sortedAppend( int val)
-        {
+         void sortedAppend(int val)
+         {
            if(tot_items<MAX_SIZE)
            {  
               int insertion_point;
@@ -46,34 +45,34 @@ private:
            }  
         }
 public:
-	// constructor; upon construction the array is “empty”.
-    intArray()
-    {
+	// constructor; upon construction the array is empty.
+   intArray()
+   {
          // set all elements as empty 
          for(int i=0; i<MAX_SIZE; i++)
-                 arrayItemEmpty[i]=true;
+            arrayItemEmpty[i]=true;
          tot_items=0;
-    } 
-    //If position “pos” is a valid position and corresponding item is “empty”, return true; false otherwise; 
-    bool isItemEmpty(int pos)
-    {
-         if( checkPos(pos) )
-             return arrayItemEmpty[pos];
+   } 
+   //If position pos is a valid position and corresponding item is empty, return true; false otherwise; 
+   bool isItemEmpty(int pos)
+   {
+         if(checkPos(pos))
+            return arrayItemEmpty[pos];
          return false;
-    }
-    //Check that position “pos” is a valid position for this array; if so return true; false otherwise; 
-    bool checkPos(int pos)
-    {
+   }
+   //Check that position pos is a valid position for this array; if so return true; false otherwise; 
+   bool checkPos(int pos)
+   {
          if(pos>=0 && pos<MAX_SIZE)
-           return true;
+            return true;
          return false;
-    }
-    //Insert “val” in position “pos” if this is a valid position and 
-    // if the corresponding item is “empty”, then return true; false otherwise; 
-    bool insertItem(int val, int pos)
-    {
+   }
+    //Insert val in position pos if this is a valid position and 
+    // if the corresponding item is empty, then return true; false otherwise; 
+   bool insertItem(int val, int pos)
+   {
          //cout << "attempt to insert item pos " << pos;
-         if( isItemEmpty(pos) )
+         if(isItemEmpty(pos))
          {
              //cout << "done" << endl;
              arrayItemContent[pos] = val;
@@ -82,63 +81,63 @@ public:
              return true;
          }
          return false;
-    }
-    int getItem(int pos)
-    {
-        int val=0;
-        if(checkPos(pos))
-        {
-           if( isItemEmpty(pos) )
-              cout << " Item is empty!" << endl;
-           else val =  arrayItemContent[pos];
-        }
-        else cout << " Position not valid " << endl;
-        return val;
-    }
-    //Pint to screen position and value of all “non-empty” elements in the array. 
-    void printArrayContent()
-    {
+   }
+   int getItem(int pos)
+   {
+         int val=0;
+         if(checkPos(pos))
+         {
+            if(isItemEmpty(pos) )
+               cout << " Item is empty!" << endl;
+            else val =  arrayItemContent[pos];
+         }
+         else cout << " Position not valid " << endl;
+         return val;
+   }
+   //Pint to screen position and value of all ï¿½non-emptyï¿½ elements in the array. 
+   void printArrayContent()
+   {
          for(int pos=0; pos<MAX_SIZE; pos++)
          {
-             cout << " Item pos " << pos << " is: ";
-             if( isItemEmpty(pos) )
-                 cout << "Empty;" << endl;
-             else
-                 cout << getItem(pos) << endl;
+            cout << " Item pos " << pos << " is: ";
+            if(isItemEmpty(pos))
+                  cout << "Empty;" << endl;
+            else
+                  cout << getItem(pos) << endl;
          }
-    } 
-    //The number of “non-empty” items in the array (inserted so far by the user); 
-    int getTotValidItems() {return tot_items;}
-    //If a “non-empty” item is found in position “pos”, its value is written to “val”, 
-    // the item becomes “empty” and true is returned; false otherwise; 
-    bool removeItemVal(int pos, int& val)
-    {
+   } 
+   //The number of ï¿½non-emptyï¿½ items in the array (inserted so far by the user); 
+   int getTotValidItems() {return tot_items;}
+   // If a non-empty item is found in position pos, its value is written to val, 
+   // the item becomes empty and true is returned; false otherwise; 
+   bool removeItemVal(int pos, int& val)
+   {
          bool result;
-         result = ( checkPos(pos) && (!isItemEmpty(pos)) );
-         if( result )
+         result = (checkPos(pos) && (!isItemEmpty(pos)));
+         if(result)
          {
-             val=getItem(pos);
-             resetItem(pos);
+            val=getItem(pos);
+            resetItem(pos);
          }
          return result;
-    }
-    //If position “pos” is a valid position for this array, reset the corresponding item (so that it becomes “empty”); 
-    bool resetItem(int pos)
-    { 
+   }
+   // If position pos is a valid position for this array, reset the corresponding item (so that it becomes ï¿½emptyï¿½); 
+   bool resetItem(int pos)
+   { 
       bool result=false;   
       if(checkPos(pos))        
       {
          if(!isItemEmpty(pos))
          {
-             arrayItemEmpty[pos]=true;
-             tot_items--;
+            arrayItemEmpty[pos]=true;
+            tot_items--;
          }
          result=true;  
       }
       return result;
-    }
-    void sortArray(bool ascending=true)
-    {
+   }
+   void sortArray(bool ascending=true)
+      {
          // temp; initially empty 
          intArray tempArray;
          int temp_tot_items=tot_items;
@@ -148,20 +147,20 @@ public:
             // sorted insertion (ascending) of 
             // eacn non-empty element into temp
             for(int pos=0; pos<MAX_SIZE; pos++)
-               if( !isItemEmpty(pos) )               
-                 tempArray.sortedAppend( getItem(pos) );
+               if(!isItemEmpty(pos))               
+                  tempArray.sortedAppend(getItem(pos));
             // reset the current array;
             resetArray();
             // fill the array from temp
             for(int pos=0; pos<temp_tot_items; pos++)
             {
-                // copy items in the same order as temp ==> this array is ascendingly sorted;
-                // copy items in the opposite order as temp ==> this array is decendingly sorted;
-                if(ascending)
-                   insertion_point=pos;
-                else
-                   insertion_point=temp_tot_items - pos -1;
-                insertItem(tempArray.getItem(pos), insertion_point);
+                  // copy items in the same order as temp ==> this array is ascendingly sorted;
+                  // copy items in the opposite order as temp ==> this array is decendingly sorted;
+                  if(ascending)
+                     insertion_point=pos;
+                  else
+                     insertion_point=temp_tot_items - pos -1;
+                  insertItem(tempArray.getItem(pos), insertion_point);
             }
          }
     }
