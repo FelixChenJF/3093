@@ -1,7 +1,5 @@
 #include "PolygonInherithance.h"
 
-
-
 void test_inherithance()
 {
 	
