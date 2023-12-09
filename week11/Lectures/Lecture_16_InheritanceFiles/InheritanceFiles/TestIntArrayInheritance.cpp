@@ -7,6 +7,7 @@ void testIntArrayInheritance()
 	intArray testArr;
 	intArrayWithBounds testArrWb;
 
+
 	cout << "Filling every array elelment with a random number" << endl;
 	// (50% positive values, 50% negative values)
 	for (int i = 0; i < intArray::MAX_SIZE; i++)
