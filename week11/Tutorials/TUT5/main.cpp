@@ -15,11 +15,11 @@ void test_intArray_p1()
     
     cout << "  check response to attempt to access 'out of bounds' items " << endl;
     pos = intArray::MAX_SIZE + 5;
-    if( !testvar.insertItem(10, pos) )
-       cout << "  insetion not allowd;" << endl;
+    if(!testvar.insertItem(10, pos) )
+        cout << "  insetion not allowd;" << endl;
 
     pos = -1;
-    if( !testvar.insertItem(20, pos) )
+    if(!testvar.insertItem(20, pos) )
        cout << "  insetion not allowd;" << endl;     
            
     cout << "  check response to attempt to overwrite items " << endl;
