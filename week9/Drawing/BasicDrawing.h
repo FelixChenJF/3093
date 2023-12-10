@@ -14,7 +14,7 @@ using namespace std;
 // Select Menu: Project 
 // select: Project Option
 // Select tab: Compiler
-// Select tab: Code Genration
+// Select tab: Code Generation
 // From: language standard dropdown menu
 // select:  ISO C++11
 //
@@ -78,7 +78,7 @@ struct bmp_header {
 	uint32_t hdr_size;	// Header size (4 B): the value is set to 40 bytes.
 	uint32_t width;		// image width in pixels (4 B)
 	uint32_t height;	// image height in pixels (4 B)
-	uint16_t planes;	// number of colr planes (2 B): the value is set to 1
+	uint16_t planes;	// number of color planes (2 B): the value is set to 1
 	uint16_t depth;		// color depth of the image, i.e. bits per pixel (2 B): set to 32 (4 bytes)
 	
 	uint32_t unused[6]; // 6 fields (4 B each): 
