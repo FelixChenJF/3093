@@ -329,8 +329,8 @@ void fillSquareArray(square in_array[], int tot_items)
 	for (int i = 0; i < tot_items; i++)
 	{
 		in_array[i].inputRandomCoord();
-		//in_array[i].inputRandomSide();
-		in_array[i].inputSide(1.0 + 2*i);
+		in_array[i].inputRandomSide();
+		// in_array[i].inputSide(1.0 + 2*i);
 	}
 }
 void printSquareArray(square in_array[], int tot_items)
@@ -509,10 +509,10 @@ int findMatchingSquares(square target, square in_array[], square out_array[], in
 		cout << "Target side not set: abort" << endl;
 		return 0;
 	}
-	targ.BottomLeft.x =targ.TopLeft.x = targ_Cx - (targ_side/2);
+	targ.BottomLeft.x = targ.TopLeft.x = targ_Cx - (targ_side/2);
 	targ.BottomRight.x = targ.TopRight.x = targ_Cx + (targ_side / 2);
-	targ.TopLeft.y = targ_Cy + (targ_side / 2); targ.TopRight.y = targ.TopLeft.y;
-	targ.BottomLeft.y = targ_Cy - (targ_side / 2); targ.BottomRight.y = targ.BottomLeft.y;
+	targ.TopRight.y = targ.TopLeft.y = targ_Cy + (targ_side / 2); 
+	targ.BottomLeft.y = targ.BottomRight.y = targ_Cy - (targ_side / 2); 
 	targ_C.x = targ_Cx; targ_C.y = targ_Cy;
 	for (int i = 0; i < tot_items; i++)
 	{
@@ -524,7 +524,7 @@ int findMatchingSquares(square target, square in_array[], square out_array[], in
 		// check the item is fully initialized; otherwise skip to next iteration
 		if (!in_array[i].getCoord(curr_Cx, curr_Cy))
 		{
-			cout << "Item coordinates not set: skip" << endl;	continue;
+			cout << "Item coordinates not set: skip" << endl; continue;
 		}
 		curr_side = in_array[i].getSide();
 		if (curr_side <= 0)
@@ -539,8 +539,8 @@ int findMatchingSquares(square target, square in_array[], square out_array[], in
 		// check match
 		curr.BottomLeft.x = curr.TopLeft.x = curr_Cx - (curr_side / 2);
 		curr.BottomRight.x = curr.TopRight.x = curr_Cx + (curr_side / 2);
-		curr.TopLeft.y = curr_Cy + (curr_side / 2); curr.TopRight.y = curr.TopLeft.y;
-		curr.BottomLeft.y = curr_Cy - (curr_side / 2); curr.BottomRight.y = curr.BottomLeft.y;
+		curr.TopLeft.y = curr.TopRight.y = curr_Cy + (curr_side / 2); 
+		curr.BottomLeft.y = curr.BottomRight.y = curr_Cy - (curr_side / 2); 
 		curr_C.x = curr_Cx; curr_C.y = curr_Cy;
 		match_found = verifySquareMatch(ruleindex, targ, curr, targ_C, curr_C);
 		// set the correponding item of out_array[]
