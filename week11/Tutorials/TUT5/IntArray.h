@@ -77,7 +77,7 @@ public:
              //cout << "done" << endl;
              arrayItemContent[pos] = val;
              arrayItemEmpty[pos] = false;
-             tot_items++;
+             tot_items++;  // return tot_items;
              return true;
          }
          return false;
@@ -85,13 +85,15 @@ public:
    int getItem(int pos)
    {
          int val=0;
-         if(checkPos(pos))
-         {
-            if(isItemEmpty(pos) )
+         if(checkPos(pos)){
+            if(!isItemEmpty(pos) ){   
+               return arrayItemContent[pos];
+            }else{ 
                cout << " Item is empty!" << endl;
-            else val =  arrayItemContent[pos];
-         }
-         else cout << " Position not valid " << endl;
+            }
+         }else{
+            cout << " Position not valid " << endl;
+         }  
          return val;
    }
    //Pint to screen position and value of all �non-empty� elements in the array. 
