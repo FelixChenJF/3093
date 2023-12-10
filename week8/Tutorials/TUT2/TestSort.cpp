@@ -84,3 +84,10 @@ void testsorting()
 	for (int i = 0; i < MAX_ELEMENTS; i++)
 		cout << "item " << i << " = " << sorted_array[i] << endl;
 }
+
+int main(){
+	testsorting();
+
+	
+	return 0;
+}
