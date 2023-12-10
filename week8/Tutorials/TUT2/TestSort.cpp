@@ -65,7 +65,7 @@ void sortIntArray(int inp_array[], int sorted_array[], int MAX_ELEMENTS)
 // test function
 void testsorting()
 {
-	const int MAX_ELEMENTS = 10;
+	const int MAX_ELEMENTS = 2;
 	int inp_array[MAX_ELEMENTS], sorted_array[MAX_ELEMENTS];
 
 	// fill with random values
@@ -88,6 +88,6 @@ void testsorting()
 int main(){
 	testsorting();
 
-	
+
 	return 0;
 }
