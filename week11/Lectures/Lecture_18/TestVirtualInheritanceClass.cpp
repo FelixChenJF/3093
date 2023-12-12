@@ -1,4 +1,4 @@
-#pragma once
+// #pragma once
 
 #include <iostream>
 #include <string>
@@ -22,16 +22,16 @@ public:
 	{
 		cout << "This is function testFunction() as defined by baseClass." << endl;
 		cout << "This function now calls fuction printInfo(): " << endl;
-		printInfo();
+		// printInfo();
 	}	
 };
 
 
-class derivedClass : public baseClass {
+class derivedClassA : public baseClass {
 protected:
 	float derivedVal;
 public:	
-	derivedClass() {baseVal = 20; derivedVal = 200.5;}
+	derivedClassA() { baseVal = 20; derivedVal = 200.5; }
 	virtual void printInfo()
 	{
 		cout << "This is function printInfo() as defined by derivedClass" << endl;
@@ -58,7 +58,7 @@ void TestVirtualInheritance()
 {
 	int temp_num;
 	baseClass testBase;
-	derivedClass testDeriv;
+	derivedClassA testDeriv;
 	derivedClassB testDerivB;
 
 	//First: try printinfo not defined as virtual
@@ -70,7 +70,7 @@ void TestVirtualInheritance()
 	
 	bool test_printInfo = true;
 	///
-	bool test_testFunction = !test_printInfo;
+	bool test_testFunction = test_printInfo;
 
 
 	cout << "Base first:" << endl;
@@ -80,7 +80,7 @@ void TestVirtualInheritance()
 		testBase.testFunction();
 
 
-	cout << endl << "Now Deriv:" << endl;
+	cout << endl << "Now DerivA:" << endl;
 	if (test_printInfo)
 		testDeriv.printInfo();
 	if (test_testFunction)
