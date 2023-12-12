@@ -15,6 +15,7 @@ public:
 private:
 	static const int MAX_SIZE=10;
 	static double conversionFactorMatrixFrom_i_To_j[MAX_SIZE][MAX_SIZE];
+	// flag
 	static bool conversionFactorMatrixSet;
 	void setConversionFactorMatrix()
 	{
@@ -571,9 +572,6 @@ public:
 	}
 };
 
-
-
 // left to students: implement a class for the "right angle triangle" using inherithance. 
-
 
 #endif
