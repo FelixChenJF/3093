@@ -98,3 +98,8 @@ void TestVirtualInheritance()
 	//cin >> temp_num;
 }
 
+int main(){
+
+	TestVirtualInheritance();
+	return 0;
+}
