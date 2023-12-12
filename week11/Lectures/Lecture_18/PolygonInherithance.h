@@ -571,9 +571,6 @@ public:
 	}
 };
 
-
-
 // left to students: implement a class for the "right angle triangle" using inherithance. 
-
 
 #endif
