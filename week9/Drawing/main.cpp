@@ -2,11 +2,14 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
+
+
 void drawKiteExample()
 {
 	kite test_kt;
 	point_f centre;
 	float width, height;
+	
 	
 	// for drawing: 
 	lineDrawingCanvas test_LDC;
@@ -14,14 +17,15 @@ void drawKiteExample()
 	string baseDirectoryName, fileName;
 	
 	// Use this when working on campus PCs;
-	baseDirectoryName = "\\Users\\chenjingfeng\\Desktop\\3093\\week9\\Drawing";
+	// baseDirectoryName = "S:\\temp";
 	
 	// Alernatively Use this when working on VDI;
 	//baseDirectoryName = "C:\\temp\\EE3093\\scripts";	
+	//baseDirectoryName = "H:\\C++\\week3\\LAB\\Drawing";	
 	
 	// Use a different baseDirectoryName if working from your laptop 	
 	//baseDirectoryName = "C:\\Mydir\\mysubdir\\mytest";
-	
+	baseDirectoryName = "\\Users\\chenjingfeng\\Desktop\\3093\\week9\\Drawing\\ResultForDrawing";
 	
 	// Now set the filename to be used by the canvas object
 	fileName = "EE3093_test_Drawing";
@@ -42,8 +46,10 @@ void drawKiteExample()
 	cout << "* "; test_LDC.printInfo();
 	cout << "**************************** " << endl;
 	
+	
+	
 	// set some sensible values for kite to be drawn
-	centre.x = 0; centre.y = 0;
+	centre.x=0; centre.y=0;
 	width = 40; height = 60;		
 	test_kt.setKite(centre, width, height);
 	test_kt.printInfo();
@@ -62,6 +68,8 @@ void drawKiteExample()
 	
 	
 }
+
+
 
 int main(int argc, char** argv) {
 	drawKiteExample();

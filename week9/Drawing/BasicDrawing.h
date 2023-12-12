@@ -3,19 +3,22 @@
 //*
 #include <iostream>
 using namespace std;
+
+
 #include <stdint.h>
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <string>
+
 // NOTE: some functions (e.g. to_string() ) and syntax (e.g. enum class) used below require the compiler to enable C++11 features. 
 // By default, Dev-Cpp does not enable C++11. In order to enable those features (and compile this file), set your Dev project as follows:
 // Select Menu: Project 
 // select: Project Option
 // Select tab: Compiler
 // Select tab: Code Generation
-// From: language standard dropdown menu
+// From: langiage standard dropdown menu
 // select:  ISO C++11
 //
 // The menu looks similar (but not identical) to this: https://cplusplus.com/doc/tutorial/introduction/devcpp/devcpp2.png
@@ -78,7 +81,7 @@ struct bmp_header {
 	uint32_t hdr_size;	// Header size (4 B): the value is set to 40 bytes.
 	uint32_t width;		// image width in pixels (4 B)
 	uint32_t height;	// image height in pixels (4 B)
-	uint16_t planes;	// number of color planes (2 B): the value is set to 1
+	uint16_t planes;	// number of colr planes (2 B): the value is set to 1
 	uint16_t depth;		// color depth of the image, i.e. bits per pixel (2 B): set to 32 (4 bytes)
 	
 	uint32_t unused[6]; // 6 fields (4 B each): 
