@@ -360,9 +360,6 @@ public:
 	}	 
 };
 
-
-
-
 class lineDrawingCanvas {
 protected:
 	basicDrawingCanvas canvas;

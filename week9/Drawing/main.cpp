@@ -43,7 +43,7 @@ void drawKiteExample()
 	cout << "**************************** " << endl;
 	
 	// set some sensible values for kite to be drawn
-	centre.x=0; centre.y=0;
+	centre.x = 0; centre.y = 0;
 	width = 40; height = 60;		
 	test_kt.setKite(centre, width, height);
 	test_kt.printInfo();
