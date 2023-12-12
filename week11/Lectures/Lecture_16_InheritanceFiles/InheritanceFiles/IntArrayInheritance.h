@@ -37,7 +37,7 @@ private:
 		}  
 	}
 public:
-	// constructor; upon construction the array is “empty”.
+	// constructor; upon construction the array is empty.
 	intArray()
 	{
 		// set all elements as empty 
@@ -46,7 +46,7 @@ public:
 		tot_items=0;
 	} 
 	
-	//If position “pos” is a valid position and corresponding item is “empty”, return true; false otherwise; 
+	//If position pos is a valid position and corresponding item is empty, return true; false otherwise; 
 	bool isItemEmpty(int pos)
 	{
 		if( checkPos(pos) )
@@ -54,7 +54,7 @@ public:
 		return false;
 	}
 	
-	//Check that position “pos” is a valid position for this array; if so return true; false otherwise; 
+	//Check that position pos is a valid position for this array; if so return true; false otherwise; 
 	bool checkPos(int pos)
 	{
 		if(pos>=0 && pos<MAX_SIZE)
@@ -62,8 +62,8 @@ public:
 		return false;
 	}
 	
-	//Insert “val” in position “pos” if this is a valid position and 
-	// if the corresponding item is “empty”, then return true; false otherwise; 
+	//Insert val in position pos if this is a valid position and 
+	// if the corresponding item is empty, then return true; false otherwise; 
 	bool insertItem(int val, int pos)
 	{
 		//cout << "attempt to insert item pos " << pos;
@@ -91,7 +91,7 @@ public:
 		return val;
 	}
 	
-	//Pint to screen position and value of all “non-empty” elements in the array. 
+	//Pint to screen position and value of all non-empty elements in the array. 
 	void printArrayContent()
 	{
 		for(int pos=0; pos<MAX_SIZE; pos++)
@@ -104,11 +104,11 @@ public:
 		}
 	} 
 	
-	//The number of “non-empty” items in the array (inserted so far by the user); 
+	//The number of non-empty items in the array (inserted so far by the user); 
 	int getTotValidItems() {return tot_items;}
 	
-	//If a “non-empty” item is found in position “pos”, its value is written to “val”, 
-	// the item becomes “empty” and true is returned; false otherwise; 
+	//If a non-empty item is found in position pos, its value is written to val, 
+	// the item becomes empty and true is returned; false otherwise; 
 	bool removeItemVal(int pos, int& val)
 	{
 		bool result;
@@ -121,7 +121,7 @@ public:
 		return result;
 	}
 	
-	//If position “pos” is a valid position for this array, reset the corresponding item (so that it becomes “empty”); 
+	//If position pos is a valid position for this array, reset the corresponding item (so that it becomes ï¿½emptyï¿½); 
 	bool resetItem(int pos)
 	{ 
 		bool result=false;   
